@@ -1,0 +1,24 @@
+{
+  "name": "demo_crud_nodejs_mysql",
+  "version": "1.0.0",
+  "description": "demo_crud_nodejs_mysql",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Bui_Quang_Hieu",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-group-router": "^2.1.0",
+    "express-myconnection": "^1.0.4",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mysql2": "^3.1.2",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.0"
+  }
+}
