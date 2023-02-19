@@ -10,6 +10,7 @@
   "author": "Bui_Quang_Hieu",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
@@ -19,6 +20,7 @@
     "method-override": "^3.0.0",
     "mysql2": "^3.1.2",
     "nodemon": "^2.0.20",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.28.0",
+    "uuid": "^9.0.0"
   }
 }

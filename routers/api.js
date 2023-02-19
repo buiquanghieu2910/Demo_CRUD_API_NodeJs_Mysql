@@ -2,29 +2,16 @@
 const Router = require('express-group-router');
 let router = new Router();
 
-const fooMiddleware = (req, res, next) => {
-    console.log('foo');
+const adminMiddleware = (req, res, next) => {
+    console.log('admin');
     next();
 }
 
-const barMiddleware = (req, res, next) => {
-    console.log('bar');
-    next();
-}
+const UserController = require('../Controllers/UserController');
 
-var testController = require('../controllers/TestController');
-router.get('/hello', (req, res) => {
-    res.send('Hello world');
-})
-
-router.group('/foo', [fooMiddleware], (router) => {
-    router.get('/a', (req, res) => {
-        res.send('Foo');
-    });
-
-    router.group('/bar', [barMiddleware], (router) => {
-        router.get('/test', testController.store)
-    })
+router.group('/user', [adminMiddleware], (router) => {
+    router.get('/', UserController.findAllUser);
+    router.get('/fake-data', UserController.fakeData);
 });
 
 module.exports = router.init();
