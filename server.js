@@ -10,5 +10,8 @@ console.log('API server started on: ' + port);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routers = require('./routers/api'); //importing route
-app.use('/api', routers);//register the route
+var apiRouter = require('./Routers/Api'); //importing route
+
+app.use('/api', apiRouter);//register the route
+// app.set('view engine', 'ejs');
+

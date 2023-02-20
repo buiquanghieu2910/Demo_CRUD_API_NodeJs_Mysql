@@ -1,29 +1,14 @@
 'user strict';
 
-// var mysql = require('mysql2');
-
-// //local mysql db connection
-// var connection = mysql.createConnection({
-//     host     : 'localhost',
-//     user     : 'root',
-//     password : 'Hieu12345.',
-//     database : 'demo_crud_nodejs_mysql',
-//     insecureAuth : true
-// });
-// // connect to database
-// connection.connect(function(err) {
-//     if (err) throw err;
-// });
-
-// module.exports = connection;
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(
-    'demo_crud_nodejs_mysql',
-    'root',
-    'Hieu12345.',
+    'demo_crud_nodejs_mysql', //Tên database
+    'root',//Username database
+    'Hieu12345.',//Password database
     {
-        host: 'localhost',
-        dialect: 'mysql'
+        host: 'localhost',//Host
+        dialect: 'mysql',//Loại SQL
+        timezone: "Asia/Ho_Chi_Minh"//Múi giờ
     }
 );
 
