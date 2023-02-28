@@ -8,7 +8,7 @@ const AuthController = require('../Controllers/AuthController');
 const config = require('../Utils/Config')
 
 const authMiddleware = (req, res, next) => {
-    var token = req.headers['acceptToken'];
+    var token = req.headers['accept-token'];
     if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
 
     jwt.verify(token, config.secret, function (err, decoded) {
