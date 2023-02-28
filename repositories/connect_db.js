@@ -1,14 +1,20 @@
 'user strict';
 
 const { Sequelize, DataTypes } = require("sequelize");
+const config = require('../Utils/Config');
 const sequelize = new Sequelize(
-    'demo_crud_nodejs_mysql', //Tên database
-    'root',//Username database
-    'Hieu12345.',//Password database
+    config.db_name,
+    config.db_username,
+    config.db_password,
     {
-        host: 'localhost',//Host
-        dialect: 'mysql',//Loại SQL
-        timezone: "Asia/Ho_Chi_Minh"//Múi giờ
+        host: config.db_host,
+        dialect: config.db_dialect,
+        dialectOptions: {
+            useUTC: false,
+            dateStrings: true,
+            typeCast: true,
+        },
+        timezone: config.timezone,
     }
 );
 
